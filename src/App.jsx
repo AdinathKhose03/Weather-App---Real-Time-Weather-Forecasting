@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './App.css'; // Create a separate CSS file for styling
 import { motion } from 'framer-motion'; // Importing Framer Motion for animations
 
+
 const App = () => {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState('');
 
-  const API_KEY = "YOUR API KEY";
+  const API_KEY = process.env.WEATHER_API;
 
   const fetchWeather = async () => {
     if (!city) {
